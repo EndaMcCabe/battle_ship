@@ -1,10 +1,10 @@
-from random import randint
+# from random import randint
 class Board:
     """
     This class will hold all the attributes of the board for the user and the computer
     """
 
-    def __init__(self, size, num, ships, name, user):
+    def __init__(self, size, num, name, user):
         self.size = size
         self.num = num
         self.ships = []
@@ -17,7 +17,7 @@ class Board:
         for row in self.board:
             print(" ".join(row))
 
-    def guess(self):
+    def guess(self, x, y):
         self.guesses.append((x, y))
         self.board[x][y] = 'X'
 
@@ -36,5 +36,9 @@ class Board:
                 self.board[x][y] = "O"
 
 
-test = Board(5, 4, 5, 'User', 7)
-test.showBoard()
+def play_game():
+    size = 5
+    num = 3
+    user_board = Board(size, num, 'User', "user")
+
+play_game()
