@@ -27,7 +27,7 @@ class Board:
         else:
             return "Miss"
     
-    def add_ship(self, x, y, type="computer"):
+    def add_ship(self, x, y, user):
         if len(self.ships) >= self.ships:
             pass
         else:
@@ -40,5 +40,6 @@ def play_game():
     size = 5
     num = 3
     user_board = Board(size, num, 'User', "user")
+    print(user_board.board)
 
 play_game()
